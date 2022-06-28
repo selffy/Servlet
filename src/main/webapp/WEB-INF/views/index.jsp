@@ -1,22 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="EUC-KR">
-<title>¸ÞÀÎÆäÀÌÁö</title>
+<head> 	
+<meta charset="UTF-8">
+<title>ë©”ì¸íŽ˜ì´ì§€</title>
 <link rel="stylesheet" href="/static/css/style.css">
 <link rel="stylesheet" href="/static/css/index.css">
 </head>
 <body>
-
 	<div id = "container">
 		<header>
 			<nav>
 				<ul>
-					<li>È¸¿ø°¡ÀÔ</li>
-					<li>·Î±×ÀÎ</li>
-					<li>°Ô½ÃÆÇ</li>
+					<li>íšŒì›ê°€ìž…</li>
+					<li>ë¡œê·¸ì¸</li>
+					<li>ê²Œì‹œíŒ</li>
 				</ul>
 			</nav>
 		</header>

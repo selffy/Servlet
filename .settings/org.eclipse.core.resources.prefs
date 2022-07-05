@@ -1,6 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main=UTF-8
-encoding//src/main/java=UTF-8
 encoding//src/main/java/web/dto=UTF-8
 encoding//src/main/java/web/filter=UTF-8
 encoding//src/main/webapp=UTF-8
@@ -17,5 +16,6 @@ encoding//src/main/webapp/static/css/index.css=UTF-8
 encoding//src/main/webapp/static/css/style.css=UTF-8
 encoding//src/main/webapp/static/js=UTF-8
 encoding//src/main/webapp/static/js/index.js=UTF-8
+encoding//src/main/webapp/static/js/signup.js=UTF-8
 encoding/src=UTF-8
 encoding/target=UTF-8

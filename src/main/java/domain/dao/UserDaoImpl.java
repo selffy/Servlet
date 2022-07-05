@@ -101,8 +101,10 @@ public class UserDaoImpl implements UserDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
 		}
-	return user;
+		return user;
 }
 	@Override
 	public int modify(int user_code) throws Exception {

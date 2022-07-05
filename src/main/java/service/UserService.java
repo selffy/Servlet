@@ -1,6 +1,8 @@
 package service;
 
+import domain.entity.User;
 import web.dto.SignupReqDto;
+
 
 public interface UserService {
 	public boolean checkUsername(String username) throws Exception;
@@ -8,5 +10,7 @@ public interface UserService {
 	public void getUser() throws Exception; //로그인할때 user정보 가지고 옴
 	public boolean updateUser() throws Exception;
 	public boolean deleteUser() throws Exception;
+	
+	public User loadUser(String username, String password) throws Exception;
 	
 }

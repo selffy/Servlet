@@ -8,29 +8,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import service.UserService;
-import service.UserServiecImlp;
+import com.google.gson.Gson;
 
-@WebServlet("/check/username")
-public class CheckUsernameServlet extends HttpServlet {
+import domain.entity.User;
+
+@WebServlet("/api/vi/principal")
+public class PrincipalServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	
-	private final UserService userService;
-	
-	public CheckUsernameServlet() {
-		userService = new UserServiecImlp();
-	}
-       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("세션에 저장된 데이터 확인");
 		HttpSession session = request.getSession();
 		
-		String username = request.getParameter("username");
+		System.out.println("User정보: " + session.getAttribute("principal"));
+		Gson gson = new Gson();
+		String userJson = gson.toJson((User) session.getAttribute("principal"));
+		System.out.println(userJson);
 		
-		response.setContentType("text/plain;charset=UTF-8");
-		try {
-			response.getWriter().print(userService.checkUsername(username));			
-		} catch (Exception e) {
-		}
+		response.setContentType("application/json;charset=utf-8");
+		response.getWriter().print(userJson);
+		
 	}
 
 }

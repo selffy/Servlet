@@ -7,6 +7,7 @@
 <title>메인페이지</title>
 <link rel="stylesheet" href="/static/css/style.css">
 <link rel="stylesheet" href="/static/css/index.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 	<div id = "container">
@@ -17,6 +18,7 @@
 					<li>로그인</li>
 					<li>게시판</li>
 				</ul>
+				<ul class="user-info"></ul>
 			</nav>
 		</header>
 		<main>

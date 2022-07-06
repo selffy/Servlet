@@ -10,33 +10,41 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import domain.entity.User;
 
 @WebFilter("/*")
-public class CharactorEncodingFilter extends HttpFilter implements Filter {
+public class AuthenticationFilter extends HttpFilter implements Filter {
 
+    /**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-	
-	public void destroy() {	//서블릿
-	}	
-	
+
+	public AuthenticationFilter() {
+
+    }
+
+	public void destroy() {
+		
+	}
+
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		//전처리
-		HttpServletRequest HttpRequest = (HttpServletRequest) request;
-		if(!HttpRequest.getMethod().equalsIgnoreCase("get")) {
-			request.setCharacterEncoding("UTF-8");
-			System.out.println("인코딩됨!");
-			
-			//IgnoreCase: 문자열을 대소문자 구분하지 않고 하겠다는 말임.
-			
+		HttpServletRequest req = (HttpServletRequest) request;
+		HttpServletResponse resp = (HttpServletResponse) response;
+		if (req.getRequestURI().contains("signin") || req.getRequestURI().contains("signup")) {
+			HttpSession session = req.getSession();
+			if(session.getAttribute("principal") != null) {
+				resp.sendRedirect("/index");
+				return;
+			}
 		}
-			
 		chain.doFilter(request, response);
-		//후처리
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
-
 	}
 
 }

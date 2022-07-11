@@ -21,7 +21,7 @@ function load() {
 				loadUserInfo(response);
 			}
 		},
-		error: () => {
+		error: (request, status, error) => {
 			alert("요청 실패");
 			console.log(request.status);
 			console.log(request.responseText);

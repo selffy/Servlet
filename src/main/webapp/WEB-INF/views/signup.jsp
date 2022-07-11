@@ -31,7 +31,7 @@
 					<td><input type = "password" name ="password"></td>
 				</tr>
 			</table>
-			<button type ="button" class ="submit-button">가입하기</button>
+			<button type ="submit">가입하기</button>
 			<button type ="reset">재작성</button>
 		</form>
 	</div>
